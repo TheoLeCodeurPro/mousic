@@ -96,20 +96,3 @@ npm run dev:client
 | **Démarrage 1-clic** | `docker compose up` démarre l'application complète sur une copie neuve du dépôt. |
 
 ---
-
-## 🎙️ Fiche Mémo pour la Démo de 3 minutes
-
-1. **Introduction (30s)** :
-   - Présentez l'idée : « Au lieu d'une simple liste, j'ai voulu représenter mes écoutes sous la forme d'un studio Hi-Fi vintage 70s-80s et d'une collection de cassettes audio grand format. »
-   - Montrez la cassette dans la platine TC-90 : les bobines tournent si une musique est en cours (`now playing`), l'étiquette au feutre manuscrit affiche le titre et l'artiste avec sa pochette.
-2. **Interactions & Timeline (1 min)** :
-   - Faites défiler la vitrine de grandes cassettes à droite et cliquez sur l'une d'elles : elle s'insère immédiatement dans la platine, le tuner radio déplace son aiguille sur l'échelle de fréquences (qui sert de timeline temporelle), et le spectre LED ambre/orange s'anime.
-   - Montrez les commandes de transport de la platine (Rewind, Fast-Forward, Play, Pause).
-3. **Preuve technique & Questions du jury (1 min 30)** :
-   - **Question 1 : Comment prouver que la clé ne fuite pas et que le navigateur ne contacte pas Last.fm ?**
-     - Ouvrez l'inspecteur du navigateur (`F12`) > Onglet **Network (Réseau)** > Filtrez sur `Fetch/XHR`.
-     - Montrez que la seule requête est `GET /api/recent-tracks` vers `localhost:3000`. Aucune requête ne part vers `last.fm`.
-   - **Question 2 : Comment fonctionne le cache ?**
-     - Rafraîchissez la page deux fois d'affilée : montrez l'en-tête HTTP `X-Cache: HIT` et la vitesse instantanée. Le serveur n'a pas rappelé Last.fm.
-   - **Question 3 : Que se passe-t-il si Last.fm est en panne ?**
-     - Le serveur intercepte l'erreur dans un bloc `try/catch` : il sert les dernières données en cache avec un message d'alerte, ou affiche un bandeau rétro de signal interrompu clair sans faire crasher l'application.
