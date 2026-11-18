@@ -6,12 +6,15 @@
 
 ## 🎯 Le Concept : « What your music looks like »
 
-Plutôt qu'une simple grille de pochettes, ce projet matérialise vos écoutes récentes sous la forme d'un **studio Hi-Fi skeuomorphique 2x2 plein écran** :
+Plutôt qu'une simple grille de pochettes, ce projet matérialise vos écoutes récentes sous la forme d'un **studio Hi-Fi skeuomorphique plein écran** :
 
-1. **Analyseur de spectre numérique SE-800 (Haut Gauche)** : 16 colonnes de barres LED incandescentes ambre/orange et mémoires de crêtes (*Peak Hold*) qui oscillent au rythme de la musique.
-2. **Tuner Radio AM/FM ST-700 (Haut Droite)** : L'échelle de fréquences radio rétro-éclairée sert de **frise temporelle** : l'aiguille rouge glisse pour indiquer le moment où chaque morceau a été joué.
-3. **Platine Cassette TC-90 (Bas Gauche)** : Une cassette audio mécanique dont les bobines tournent en direct si un morceau est en cours d'écoute (`now playing`). L'étiquette de la cassette affiche le titre, l'artiste et la miniature de la pochette. Boutons de transport mécaniques interactifs (Play, Pause, Avance, Retour).
-4. **Meuble d'archives de cassettes CR-25 (Bas Droite)** : Inspiré des collections de cassettes audio vintage (tranches de cassettes empilées avec marques TDK, Maxell, Sony, etc., et écriture type mixtape des artistes et morceaux). Cliquer sur n'importe quelle cassette la charge instantanément dans la platine TC-90 !
+- **Colonne de gauche (Tour Hi-Fi vintage) :**
+  1. **Analyseur de spectre numérique SE-800 (Haut)** : 16 colonnes de barres LED incandescentes ambre/orange et mémoires de crêtes (*Peak Hold*) qui oscillent au rythme de la musique.
+  2. **Platine Cassette TC-90 (Milieu)** : Une cassette audio mécanique dont les bobines tournent en direct si un morceau est en cours d'écoute (`now playing`). L'étiquette de la cassette affiche le titre, l'artiste et la miniature de la pochette. Boutons de transport mécaniques interactifs (`REW`, `PLAY`, `PAUSE`, `FFWD`).
+  3. **Tuner Radio AM/FM ST-700 (Bas)** : L'échelle de fréquences radio rétro-éclairée sert de **frise temporelle** : l'aiguille rouge glisse pour indiquer le moment où chaque morceau a été joué.
+
+- **Colonne de droite (Vitrine de grandes cassettes défilantes) :**
+  - **Archive de cassettes CR-25** : Inspirée des collections de cassettes audio vintage (grandes cassettes avec pochettes d'albums agrandies, bobines crantées, et écriture feutre manuscrit pour les artistes et morceaux). Cliquer sur n'importe quelle cassette la charge instantanément dans la platine TC-90 !
 
 ---
 
@@ -21,8 +24,8 @@ Tout le projet (Frontend React + Backend Express + Cache) démarre en une seule 
 
 ### 1. Cloner le dépôt
 ```bash
-git clone https://github.com/TheoInTheMelo/what-your-music-looks-like.git
-cd what-your-music-looks-like
+git clone https://github.com/TheoLeCodeurPro/mousic.git
+cd mousic
 ```
 
 ### 2. Configurer les variables d'environnement
@@ -89,7 +92,7 @@ npm run dev:client
 | **Clé API sécurisée** | La clé API reste strictement côté serveur dans `process.env.LASTFM_API_KEY`. Elle n'est jamais exposée au client ni présente dans les commits Git. |
 | **Cache serveur (TTL 60s)** | Le serveur Express garde en mémoire (RAM) la réponse Last.fm pendant 60 secondes. Un rafraîchissement répété de la page renvoie le cache avec l'en-tête `X-Cache: HIT` sans requêter Last.fm. |
 | **Résilience (Last.fm inaccessible)** | En cas de panne Last.fm ou de coupure réseau, le serveur bascule automatiquement sur les dernières données valides en cache ou renvoie un code 503 explicite. L'interface affiche un bandeau rétro d'avertissement et un bouton de reconnexion, jamais d'écran blanc. |
-| **Responsive Mobile & Desktop** | Mise en page adaptative : disposition 2 colonnes sur grand écran (Chaîne Hi-Fi à gauche, Étagère à cassettes à droite), et empilement vertical optimisé sur smartphone. |
+| **Responsive Mobile & Desktop** | Mise en page adaptative : chaîne Hi-Fi à gauche et étagère de cassettes à droite sur grand écran, et empilement vertical optimisé sur smartphone. |
 | **Démarrage 1-clic** | `docker compose up` démarre l'application complète sur une copie neuve du dépôt. |
 
 ---
@@ -97,16 +100,16 @@ npm run dev:client
 ## 🎙️ Fiche Mémo pour la Démo de 3 minutes
 
 1. **Introduction (30s)** :
-   - Présentez l'idée : « Au lieu d'une simple liste, j'ai voulu représenter mes écoutes sous la forme d'une chaîne Hi-Fi 70s-80s et son étagère de cassettes audio. »
-   - Montrez la cassette TC-90 : les bobines qui tournent si une musique est en cours (`now playing`), l'étiquette personnalisée avec la vraie pochette d'album.
+   - Présentez l'idée : « Au lieu d'une simple liste, j'ai voulu représenter mes écoutes sous la forme d'un studio Hi-Fi vintage 70s-80s et d'une collection de cassettes audio grand format. »
+   - Montrez la cassette dans la platine TC-90 : les bobines tournent si une musique est en cours (`now playing`), l'étiquette au feutre manuscrit affiche le titre et l'artiste avec sa pochette.
 2. **Interactions & Timeline (1 min)** :
-   - Cliquez sur différentes cassettes dans le meuble d'archive à droite : la cassette est "insérée" dans le lecteur, le tuner radio déplace son aiguille sur l'échelle de fréquences (qui sert de timeline), le spectre LED s'anime et les doubles VU-mètres oscillent.
-   - Montrez les commandes de transport (Rewind, Fast-Forward, Play, Pause, interrupteur Power).
-3. **Preuve technique & Questions possibles (1 min 30)** :
+   - Faites défiler la vitrine de grandes cassettes à droite et cliquez sur l'une d'elles : elle s'insère immédiatement dans la platine, le tuner radio déplace son aiguille sur l'échelle de fréquences (qui sert de timeline temporelle), et le spectre LED ambre/orange s'anime.
+   - Montrez les commandes de transport de la platine (Rewind, Fast-Forward, Play, Pause).
+3. **Preuve technique & Questions du jury (1 min 30)** :
    - **Question 1 : Comment prouver que la clé ne fuite pas et que le navigateur ne contacte pas Last.fm ?**
-     - Ouvrez l'inspecteur du navigateur (F12) > Onglet **Réseau (Network)** > Filtrez sur `Fetch/XHR`.
+     - Ouvrez l'inspecteur du navigateur (`F12`) > Onglet **Network (Réseau)** > Filtrez sur `Fetch/XHR`.
      - Montrez que la seule requête est `GET /api/recent-tracks` vers `localhost:3000`. Aucune requête ne part vers `last.fm`.
    - **Question 2 : Comment fonctionne le cache ?**
-     - Cliquez deux fois d'affilée sur le bouton **SYNC** ou faites F5 : montrez l'en-tête `X-Cache: HIT` et le badge vert `Cache: HIT (xx s)` dans l'en-tête. Le serveur n'a pas rappelé Last.fm.
+     - Rafraîchissez la page deux fois d'affilée : montrez l'en-tête HTTP `X-Cache: HIT` et la vitesse instantanée. Le serveur n'a pas rappelé Last.fm.
    - **Question 3 : Que se passe-t-il si Last.fm est en panne ?**
-     - Le serveur intercepte l'erreur dans un bloc `try/catch` : il sert les dernières données en cache avec un message d'alerte, ou affiche un bandeau de signal interrompu clair sans faire crasher l'application.
+     - Le serveur intercepte l'erreur dans un bloc `try/catch` : il sert les dernières données en cache avec un message d'alerte, ou affiche un bandeau rétro de signal interrompu clair sans faire crasher l'application.
