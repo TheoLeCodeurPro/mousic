@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: what-your-music-looks-like
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - LASTFM_API_KEY=${LASTFM_API_KEY}
+      - LASTFM_USERNAME=${LASTFM_USERNAME:-TheoInTheMelo}
+      - PORT=3000
+      - CACHE_TTL_SECONDS=${CACHE_TTL_SECONDS:-60}
+    restart: unless-stopped

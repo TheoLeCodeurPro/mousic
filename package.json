@@ -1,0 +1,28 @@
+{
+  "name": "what-your-music-looks-like",
+  "version": "1.0.0",
+  "description": "Vintage Hi-Fi Stereo Stack visualizer for Last.fm recent tracks",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "node server/index.js",
+    "build": "npm run build --prefix client"
+  },
+  "keywords": [
+    "lastfm",
+    "hifi",
+    "visualizer",
+    "audio",
+    "vintage"
+  ],
+  "author": "TheoInTheMelo",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0"
+  }
+}
