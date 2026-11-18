@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import SpectrumAnalyzer from './components/SpectrumAnalyzer';
-import RadioTuner from './components/RadioTuner';
 import CassetteDeck from './components/CassetteDeck';
+import RadioTuner from './components/RadioTuner';
 import CassetteLibrary from './components/CassetteLibrary';
 import OfflineBanner from './components/OfflineBanner';
 
@@ -65,7 +65,7 @@ export default function App() {
 
   return (
     <div className="h-screen w-screen overflow-hidden bg-[#100f0d] text-stone-200 p-2 sm:p-3 flex flex-col justify-between">
-      {/* Offline/Error Notification if needed */}
+      {/* Offline/Error Notification */}
       <OfflineBanner
         error={error}
         warning={warning}
@@ -73,38 +73,41 @@ export default function App() {
         isRetrying={loading}
       />
 
-      {/* 2x2 Full Screen Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-2 sm:gap-3 flex-1 h-full min-h-0">
-        {/* Top-Left: Frequency Spectrum Analyzer */}
-        <div className="min-h-0 h-full">
-          <SpectrumAnalyzer
-            isPlaying={isPlaying}
-            track={currentTrack}
-          />
+      {/* Main Studio View: Left Stacked Hi-Fi Tower + Right Cassette Showcase */}
+      <div className="flex flex-col lg:flex-row gap-2 sm:gap-3 flex-1 h-full min-h-0">
+        {/* Left: 3-Module Hi-Fi Stack (SE-800, TC-90, ST-700) */}
+        <div className="w-full lg:w-[480px] xl:w-[530px] flex-shrink-0 flex flex-col justify-between h-full gap-2 min-h-0">
+          {/* Top: SE-800 Digital Spectrum Analyzer */}
+          <div className="flex-1 min-h-0">
+            <SpectrumAnalyzer
+              isPlaying={isPlaying}
+              track={currentTrack}
+            />
+          </div>
+
+          {/* Middle: TC-90 Stereo Cassette Deck */}
+          <div className="flex-1 min-h-0">
+            <CassetteDeck
+              currentTrack={currentTrack}
+              isPlaying={isPlaying}
+              onPlayToggle={() => setIsPlaying(!isPlaying)}
+              onNextTrack={handleNextTrack}
+              onPrevTrack={handlePrevTrack}
+              tapeCounter={String(currentIndex + 1).padStart(3, '0')}
+            />
+          </div>
+
+          {/* Bottom: ST-700 AM/FM Radio Tuner & Timeline */}
+          <div className="flex-1 min-h-0">
+            <RadioTuner
+              tracks={tracks}
+              currentIndex={currentIndex}
+            />
+          </div>
         </div>
 
-        {/* Top-Right: AM/FM Radio Tuner & Timeline */}
-        <div className="min-h-0 h-full">
-          <RadioTuner
-            tracks={tracks}
-            currentIndex={currentIndex}
-          />
-        </div>
-
-        {/* Bottom-Left: TC-90 Stereo Cassette Deck */}
-        <div className="min-h-0 h-full">
-          <CassetteDeck
-            currentTrack={currentTrack}
-            isPlaying={isPlaying}
-            onPlayToggle={() => setIsPlaying(!isPlaying)}
-            onNextTrack={handleNextTrack}
-            onPrevTrack={handlePrevTrack}
-            tapeCounter={String(currentIndex + 1).padStart(3, '0')}
-          />
-        </div>
-
-        {/* Bottom-Right: Cassette Tape Library / Archive (Replaces SA-850) */}
-        <div className="min-h-0 h-full">
+        {/* Right: Large Cassette Archive Showcase with scroll */}
+        <div className="flex-1 h-full min-h-0 min-w-0">
           <CassetteLibrary
             tracks={tracks}
             currentIndex={currentIndex}
