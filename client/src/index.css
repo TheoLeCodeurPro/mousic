@@ -4,10 +4,30 @@
   body {
     background-color: #1a1917;
     color: #e5e5e5;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     user-select: none;
     -webkit-font-smoothing: antialiased;
   }
+}
+
+/* Retro Fonts */
+.font-hardware {
+  font-family: 'Chakra Petch', -apple-system, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-hifi {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.font-digital {
+  font-family: 'VT323', monospace;
+  letter-spacing: 0.1em;
+}
+
+.font-marker {
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 0.03em;
 }
 
 /* Brushed aluminum textures & vintage metal finishes */

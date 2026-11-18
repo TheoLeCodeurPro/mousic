@@ -17,12 +17,12 @@ export default function CassetteLibrary({
       {/* Module Title Header */}
       <div className="flex justify-between items-center mb-2 px-4 z-10 flex-shrink-0">
         <div className="flex items-center gap-2">
-          <span className="font-extrabold text-xs tracking-wider text-stone-800">CR-25</span>
-          <span className="text-[10px] tracking-widest font-semibold text-stone-600 uppercase">
+          <span className="font-hardware font-black text-sm tracking-wider text-stone-900">CR-25</span>
+          <span className="text-[10px] tracking-widest font-hardware font-bold text-stone-700 uppercase">
             CASSETTE TAPE ARCHIVE · HISTORIQUE ({tracks.length} CASSETTES)
           </span>
         </div>
-        <div className="text-[9px] font-mono tracking-widest text-stone-600 bg-stone-300 px-2 py-0.5 rounded border border-stone-400">
+        <div className="text-[9px] font-hifi tracking-widest text-stone-700 bg-stone-300 px-2 py-0.5 rounded border border-stone-400">
           DÉFILEZ & CLIQUEZ POUR CHARGER
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function CassetteLibrary({
       {/* Scrollable Cassette Showcase */}
       <div className="relative flex-1 bg-[#14120f] rounded-lg border-2 border-stone-700 shadow-inner p-3 overflow-y-auto space-y-3 custom-scrollbar z-10">
         {tracks.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-full text-stone-500 font-mono text-xs">
+          <div className="flex flex-col items-center justify-center h-full text-stone-500 font-hifi text-xs">
             <Disc3 className="w-8 h-8 text-stone-600 mb-2 animate-spin" />
             <span>Chargement des cassettes...</span>
           </div>
@@ -49,22 +49,22 @@ export default function CassetteLibrary({
                     : 'bg-[#1e1b17] border-stone-700 hover:border-stone-500 hover:bg-[#23201a]'
                 }`}
               >
-                {/* Vintage Cassette Header Label (Paper tape sticker) */}
+                {/* Vintage Cassette Header Label (Mixtape handwritten marker style) */}
                 <div className="bg-[#ede7da] border border-stone-400 rounded-md px-3 py-1 mb-2 shadow-xs flex items-center justify-between">
                   <div className="flex-1 truncate mr-3">
-                    <div className="text-xs font-black text-stone-900 truncate tracking-tight uppercase">
+                    <div className="font-marker text-sm text-stone-900 truncate tracking-wide">
                       {track.name}
                     </div>
-                    <div className="text-[11px] font-bold text-stone-700 truncate">
+                    <div className="font-marker text-xs text-stone-700 truncate opacity-90">
                       {track.artist}
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    <span className="text-[8px] font-mono font-bold bg-amber-800 text-white px-1.5 py-0.5 rounded">
+                    <span className="text-[8px] font-hifi font-bold bg-amber-800 text-white px-1.5 py-0.5 rounded">
                       SIDE A
                     </span>
-                    <span className="text-[9px] font-mono font-bold text-stone-600">
+                    <span className="text-[11px] font-digital text-stone-700 font-bold">
                       #{String(idx + 1).padStart(2, '0')}
                     </span>
                   </div>
@@ -97,13 +97,13 @@ export default function CassetteLibrary({
 
                     {/* Album info & Time */}
                     <div className="flex-1 min-w-0 pr-1">
-                      <div className="text-[9px] font-mono text-amber-400 uppercase tracking-widest font-bold">
+                      <div className="text-[9px] font-hifi text-amber-400 uppercase tracking-widest font-bold">
                         {isLive ? '🔴 LIVE ON AIR' : 'ALBUM ARCHIVE'}
                       </div>
-                      <div className="text-xs font-bold text-stone-200 truncate mt-0.5">
+                      <div className="text-xs font-hardware font-bold text-stone-200 truncate mt-0.5">
                         {track.album || 'Single'}
                       </div>
-                      <div className="flex items-center gap-1 text-[9px] text-stone-400 font-mono mt-1">
+                      <div className="flex items-center gap-1 text-[10px] text-stone-400 font-hifi mt-1">
                         <Clock className="w-3 h-3 text-amber-500" />
                         <span className="truncate">{isLive ? 'En ce moment' : track.date || 'Récemment'}</span>
                       </div>
@@ -119,10 +119,10 @@ export default function CassetteLibrary({
                 </div>
 
                 {/* Cassette Footer Strip: Status & Specs */}
-                <div className="flex justify-between items-center text-[8px] text-stone-400 font-mono px-2 pt-2">
+                <div className="flex justify-between items-center text-[9px] text-stone-400 font-hifi px-2 pt-2">
                   <span>HIGH BIAS 70µs EQ · JAPAN</span>
                   {isSelected ? (
-                    <span className="text-amber-400 font-bold bg-amber-950/80 px-2 py-0.5 rounded border border-amber-600">
+                    <span className="text-amber-400 font-bold bg-amber-950/80 px-2 py-0.5 rounded border border-amber-600 font-hardware">
                       ▶ CHARGÉE DANS LA PLATINE TC-90
                     </span>
                   ) : (
@@ -138,7 +138,7 @@ export default function CassetteLibrary({
       </div>
 
       {/* Bottom Lip */}
-      <div className="flex justify-between items-center text-[8px] text-stone-500 font-mono px-4 pt-1 z-10 flex-shrink-0">
+      <div className="flex justify-between items-center text-[8px] text-stone-500 font-hifi px-4 pt-1 z-10 flex-shrink-0">
         <span>COLLECTION MILES & TRACKS</span>
         <span>DOLBY SURROUND READY</span>
       </div>

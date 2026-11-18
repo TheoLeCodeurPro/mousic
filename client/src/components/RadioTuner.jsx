@@ -20,8 +20,8 @@ export default function RadioTuner({
       {/* Model & Branding */}
       <div className="flex justify-between items-center px-4 flex-shrink-0">
         <div className="flex items-center gap-2">
-          <span className="font-extrabold text-xs tracking-wider text-stone-800">ST-700</span>
-          <span className="text-[10px] tracking-widest font-semibold text-stone-600 uppercase">
+          <span className="font-hardware font-black text-sm tracking-wider text-stone-900">ST-700</span>
+          <span className="text-[10px] tracking-widest font-hardware font-bold text-stone-700 uppercase">
             AM/FM STEREO TUNER · TIMELINE MONITOR
           </span>
         </div>
@@ -29,11 +29,11 @@ export default function RadioTuner({
         {/* Indicators */}
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1">
-            <span className="text-[8px] text-stone-600 font-bold uppercase">STEREO</span>
+            <span className="text-[8px] text-stone-600 font-hardware font-bold uppercase">STEREO</span>
             <div className="w-2 h-2 rounded-full red-led-on" />
           </div>
           <div className="flex items-center gap-1">
-            <span className="text-[8px] text-stone-600 font-bold uppercase">TUNED</span>
+            <span className="text-[8px] text-stone-600 font-hardware font-bold uppercase">TUNED</span>
             <div className="w-2 h-2 rounded-full green-led-on" />
           </div>
         </div>
@@ -48,18 +48,18 @@ export default function RadioTuner({
 
           {/* Scale Markings: FM */}
           <div className="relative z-10">
-            <div className="flex justify-between items-center text-[9px] font-mono font-bold text-amber-500/90 border-b border-amber-900/50 pb-0.5">
-              <span className="text-[10px] text-amber-400 font-sans font-bold">FM</span>
+            <div className="flex justify-between items-center text-[10px] font-hifi font-bold text-amber-500/90 border-b border-amber-900/50 pb-0.5">
+              <span className="text-xs text-amber-400 font-hardware font-bold">FM</span>
               <span>88</span>
               <span>92</span>
               <span>96</span>
               <span>100</span>
               <span>104</span>
               <span>108</span>
-              <span className="text-[8px] text-amber-600">MHz</span>
+              <span className="text-[9px] text-amber-600 font-hifi">MHz</span>
             </div>
             {/* Frequency ticks */}
-            <div className="flex justify-between px-6 pt-0.5 text-amber-700/60 font-mono text-[6px]">
+            <div className="flex justify-between px-6 pt-0.5 text-amber-700/60 font-hifi text-[6px]">
               {Array.from({ length: 21 }).map((_, i) => (
                 <div key={i} className={`w-[1px] bg-amber-600/50 ${i % 4 === 0 ? 'h-2 bg-amber-400' : 'h-1'}`} />
               ))}
@@ -68,15 +68,15 @@ export default function RadioTuner({
 
           {/* Scale Markings: AM */}
           <div className="relative z-10 pt-1">
-            <div className="flex justify-between items-center text-[8px] font-mono text-amber-600/80 border-t border-amber-900/40 pt-0.5">
-              <span className="text-[9px] text-amber-500 font-sans font-bold">AM</span>
+            <div className="flex justify-between items-center text-[9px] font-hifi text-amber-600/80 border-t border-amber-900/40 pt-0.5">
+              <span className="text-[10px] text-amber-500 font-hardware font-bold">AM</span>
               <span>530</span>
               <span>700</span>
               <span>900</span>
               <span>1200</span>
               <span>1400</span>
               <span>1600</span>
-              <span className="text-[7px] text-amber-700">kHz</span>
+              <span className="text-[8px] text-amber-700 font-hifi">kHz</span>
             </div>
           </div>
 
@@ -90,11 +90,11 @@ export default function RadioTuner({
           </div>
 
           {/* Current Frequency & Timestamp Display */}
-          <div className="relative z-10 flex justify-between items-center px-1 text-[8px] font-mono text-stone-400 border-t border-stone-800 pt-0.5">
-            <span className="text-amber-300 font-bold tracking-wider">
+          <div className="relative z-10 flex justify-between items-center px-1 text-[8px] text-stone-400 border-t border-stone-800 pt-0.5">
+            <span className="text-amber-300 font-digital text-sm font-bold tracking-widest">
               {frequency} MHz
             </span>
-            <span className="text-stone-300 truncate max-w-[220px]">
+            <span className="text-stone-300 font-hifi truncate max-w-[220px]">
               {currentTrack?.nowPlaying
                 ? '🔴 EN CE MOMENT (LIVE)'
                 : currentTrack?.date
@@ -106,7 +106,7 @@ export default function RadioTuner({
 
         {/* Decorative Tuning Knob (Aesthetic only, non-interactive) */}
         <div className="flex flex-col items-center pointer-events-none flex-shrink-0">
-          <span className="text-[8px] font-bold text-stone-600 uppercase tracking-wider mb-1">TUNING</span>
+          <span className="text-[8px] font-hardware font-bold text-stone-600 uppercase tracking-wider mb-1">TUNING</span>
           <div className="w-16 h-16 rounded-full knob-silver relative border-2 border-stone-500 flex items-center justify-center shadow-lg">
             <div className="absolute inset-1 rounded-full border border-dashed border-stone-400/50" />
             <div
@@ -114,12 +114,12 @@ export default function RadioTuner({
               style={{ transform: `rotate(${needlePercent * 3.6}deg)` }}
             />
           </div>
-          <span className="text-[7px] text-stone-500 font-mono mt-1">FLY-WHEEL</span>
+          <span className="text-[7px] text-stone-500 font-hifi mt-1">FLY-WHEEL</span>
         </div>
       </div>
 
       {/* Footer Info */}
-      <div className="flex justify-between items-center text-[8px] text-stone-500 font-mono px-4 flex-shrink-0">
+      <div className="flex justify-between items-center text-[8px] text-stone-500 font-hifi px-4 flex-shrink-0">
         <span>PHASE LOCKED LOOP (PLL) SYNTHESIZER</span>
         <span>AUTO-TRACKING TIMELINE</span>
       </div>

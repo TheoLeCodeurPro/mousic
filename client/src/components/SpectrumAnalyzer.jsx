@@ -91,13 +91,13 @@ export default function SpectrumAnalyzer({ isPlaying, track, powerOn = true }) {
       {/* Header Info */}
       <div className="flex justify-between items-center px-4 flex-shrink-0">
         <div className="flex items-center gap-2">
-          <span className="font-extrabold text-xs tracking-wider text-stone-800">SE-800</span>
-          <span className="text-[10px] tracking-widest font-semibold text-stone-600 uppercase">
+          <span className="font-hardware font-black text-sm tracking-wider text-stone-900">SE-800</span>
+          <span className="text-[10px] tracking-widest font-hardware font-bold text-stone-700 uppercase">
             DIGITAL FREQUENCY SPECTRUM ANALYZER
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[8px] uppercase tracking-wider text-stone-600 font-bold">PEAK HOLD</span>
+          <span className="text-[8px] uppercase tracking-wider text-stone-600 font-hardware font-bold">PEAK HOLD</span>
           <div className={`w-2 h-2 rounded-full ${isPlaying ? 'amber-led-on' : 'amber-led-off'}`} />
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function SpectrumAnalyzer({ isPlaying, track, powerOn = true }) {
       <div className="flex items-center justify-around gap-4 px-2 my-auto">
         {/* Recessed Dark Spectrum Screen */}
         <div className="relative bg-[#100c08] border-2 border-stone-700 rounded-md p-2 shadow-inner flex flex-col items-center">
-          <div className="flex justify-between w-full px-2 text-[8px] tracking-wider text-amber-500/70 font-mono">
+          <div className="flex justify-between w-full px-2 text-[8px] tracking-wider text-amber-500/70 font-hifi">
             <span>63Hz</span>
             <span>250Hz</span>
             <span>1kHz</span>
@@ -121,7 +121,7 @@ export default function SpectrumAnalyzer({ isPlaying, track, powerOn = true }) {
             className="w-full max-w-[340px] h-[85px] my-1"
           />
 
-          <div className="w-full flex justify-between px-2 text-[8px] text-amber-600/60 font-mono">
+          <div className="w-full flex justify-between px-2 text-[8px] text-amber-600/60 font-hifi">
             <span>-20dB</span>
             <span>-10dB</span>
             <span>-3dB</span>
@@ -133,25 +133,25 @@ export default function SpectrumAnalyzer({ isPlaying, track, powerOn = true }) {
         {/* Decorative Knobs (Non-interactive, purely skeuomorphic aesthetic) */}
         <div className="flex gap-4 items-center">
           <div className="flex flex-col items-center pointer-events-none">
-            <span className="text-[8px] font-bold text-stone-600 uppercase tracking-wider mb-1">INPUT LVL</span>
+            <span className="text-[8px] font-hardware font-bold text-stone-600 uppercase tracking-wider mb-1">INPUT LVL</span>
             <div className="w-11 h-11 rounded-full knob-silver relative border border-stone-500 flex items-center justify-center shadow-md">
               <div className="w-1 h-3.5 bg-stone-800 rounded-full absolute -top-0.5" />
             </div>
-            <span className="text-[7px] text-stone-500 font-mono mt-1">CAL</span>
+            <span className="text-[7px] text-stone-500 font-hifi mt-1">CAL</span>
           </div>
 
           <div className="flex flex-col items-center pointer-events-none">
-            <span className="text-[8px] font-bold text-stone-600 uppercase tracking-wider mb-1">DECAY</span>
+            <span className="text-[8px] font-hardware font-bold text-stone-600 uppercase tracking-wider mb-1">DECAY</span>
             <div className="w-11 h-11 rounded-full knob-silver relative border border-stone-500 flex items-center justify-center shadow-md">
               <div className="w-1 h-3.5 bg-stone-800 rounded-full absolute top-1 left-2 transform rotate-45" />
             </div>
-            <span className="text-[7px] text-stone-500 font-mono mt-1">NORM</span>
+            <span className="text-[7px] text-stone-500 font-hifi mt-1">NORM</span>
           </div>
         </div>
       </div>
 
       {/* Footer Info */}
-      <div className="flex justify-between items-center text-[8px] text-stone-500 font-mono px-4 flex-shrink-0">
+      <div className="flex justify-between items-center text-[8px] text-stone-500 font-hifi px-4 flex-shrink-0">
         <span>SOLID STATE STEREO SPECTRUM MONITOR</span>
         <span>REAL-TIME FFT 16-BAND</span>
       </div>

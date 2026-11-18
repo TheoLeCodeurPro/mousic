@@ -20,19 +20,19 @@ export default function CassetteDeck({
       {/* Model & Branding Header */}
       <div className="flex justify-between items-center px-4 flex-shrink-0">
         <div className="flex items-baseline gap-2">
-          <span className="font-extrabold text-xs tracking-wider text-stone-800">TC-90</span>
-          <span className="text-[10px] tracking-widest font-semibold text-stone-600 uppercase">
+          <span className="font-hardware font-black text-sm tracking-wider text-stone-900">TC-90</span>
+          <span className="text-[10px] tracking-widest font-hardware font-bold text-stone-700 uppercase">
             STEREO CASSETTE TAPE DECK
           </span>
-          <span className="text-[8px] tracking-wider px-1 py-0.2 bg-stone-300 text-stone-700 rounded border border-stone-400">
+          <span className="text-[8px] tracking-wider px-1 py-0.2 bg-stone-300 font-hifi text-stone-800 rounded border border-stone-400">
             AUTO REVERSE
           </span>
         </div>
 
         {/* Tape Counter */}
-        <div className="flex items-center gap-1.5 bg-[#181512] px-2 py-0.5 rounded border border-stone-600">
-          <span className="text-[8px] text-amber-500/80 font-mono tracking-widest">TAPE</span>
-          <span className="text-xs font-mono font-bold text-amber-400 tracking-widest">
+        <div className="flex items-center gap-1.5 bg-[#181512] px-2.5 py-0.5 rounded border border-stone-600">
+          <span className="text-[9px] text-amber-500/80 font-hifi tracking-widest">TAPE</span>
+          <span className="text-sm font-digital text-amber-400 tracking-widest leading-none">
             {tapeCounter}
           </span>
         </div>
@@ -48,16 +48,16 @@ export default function CassetteDeck({
           {/* The Physical Vintage Cassette */}
           <div className="relative w-full h-full bg-[#24211d] rounded border-2 border-stone-700 shadow-md flex flex-col justify-between p-2">
             {/* Top Label with Track Info */}
-            <div className="bg-[#e7e1d5] border border-stone-400 rounded px-2 py-0.5 shadow-sm flex items-center justify-between">
+            <div className="bg-[#ede7da] border border-stone-400 rounded px-2.5 py-1 shadow-sm flex items-center justify-between">
               <div className="flex-1 truncate mr-2">
-                <div className="text-[10px] font-bold text-stone-900 truncate tracking-tight uppercase">
+                <div className="font-marker text-xs text-stone-900 truncate tracking-wide">
                   {currentTrack ? currentTrack.name : 'AUCUNE CASSETTE CHARGÉE'}
                 </div>
-                <div className="text-[9px] font-semibold text-stone-700 truncate">
+                <div className="font-marker text-[10px] text-stone-700 truncate opacity-90">
                   {currentTrack ? currentTrack.artist : 'Sélectionnez une cassette à droite'}
                 </div>
               </div>
-              <span className="text-[7px] font-mono font-bold bg-amber-700 text-white px-1 py-0.2 rounded">
+              <span className="text-[8px] font-hifi font-bold bg-amber-800 text-white px-1.5 py-0.5 rounded">
                 SIDE A
               </span>
             </div>
@@ -86,7 +86,7 @@ export default function CassetteDeck({
                 ) : (
                   <Disc3 className="w-6 h-6 text-amber-600/70" />
                 )}
-                <span className="text-[7px] text-amber-300 font-mono tracking-tighter truncate max-w-[95px]">
+                <span className="text-[7px] text-amber-300 font-hifi tracking-tighter truncate max-w-[95px]">
                   {currentTrack?.album || 'LAST.FM MIX'}
                 </span>
                 {currentTrack?.nowPlaying && (
@@ -107,7 +107,7 @@ export default function CassetteDeck({
             </div>
 
             {/* Bottom Cassette Cutout */}
-            <div className="flex justify-between items-center text-[7px] text-stone-500 font-mono px-1">
+            <div className="flex justify-between items-center text-[7px] text-stone-500 font-hifi px-1">
               <span>TYPE I [NORMAL] 120µs</span>
               <span>JAPAN</span>
             </div>
@@ -116,7 +116,7 @@ export default function CassetteDeck({
 
         {/* Right Side: Interactive Piano-Key Mechanical Buttons ONLY */}
         <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
-          <span className="text-[8px] font-bold text-stone-600 uppercase tracking-wider">TRANSPORT</span>
+          <span className="text-[8px] font-hardware font-bold text-stone-600 uppercase tracking-wider">TRANSPORT</span>
           <div className="flex items-center gap-2">
             {/* REWIND (Previous Track) */}
             <button
@@ -125,7 +125,7 @@ export default function CassetteDeck({
               className="mech-button flex flex-col items-center justify-center w-11 h-14 rounded cursor-pointer active:translate-y-0.5"
             >
               <Rewind className="w-4 h-4 text-stone-800" />
-              <span className="text-[8px] font-bold text-stone-700 mt-1">REW</span>
+              <span className="text-[8px] font-hardware font-bold text-stone-800 mt-1">REW</span>
             </button>
 
             {/* PLAY */}
@@ -137,7 +137,7 @@ export default function CassetteDeck({
               }`}
             >
               <Play className={`w-4 h-4 ${isPlaying ? 'text-green-700 fill-green-700' : 'text-stone-800'}`} />
-              <span className="text-[8px] font-bold text-stone-700 mt-1">PLAY</span>
+              <span className="text-[8px] font-hardware font-bold text-stone-800 mt-1">PLAY</span>
             </button>
 
             {/* PAUSE */}
@@ -149,7 +149,7 @@ export default function CassetteDeck({
               }`}
             >
               <Pause className="w-4 h-4 text-stone-800" />
-              <span className="text-[8px] font-bold text-stone-700 mt-1">PAUSE</span>
+              <span className="text-[8px] font-hardware font-bold text-stone-800 mt-1">PAUSE</span>
             </button>
 
             {/* FAST FORWARD (Next Track) */}
@@ -159,14 +159,14 @@ export default function CassetteDeck({
               className="mech-button flex flex-col items-center justify-center w-11 h-14 rounded cursor-pointer active:translate-y-0.5"
             >
               <FastForward className="w-4 h-4 text-stone-800" />
-              <span className="text-[8px] font-bold text-stone-700 mt-1">FFWD</span>
+              <span className="text-[8px] font-hardware font-bold text-stone-800 mt-1">FFWD</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* Footer Info */}
-      <div className="flex justify-between items-center text-[8px] text-stone-500 font-mono px-4 flex-shrink-0">
+      <div className="flex justify-between items-center text-[8px] text-stone-500 font-hifi px-4 flex-shrink-0">
         <span>PRECISION DUAL-MOTOR MECHANISM</span>
         <span>DOLBY B/C NOISE REDUCTION</span>
       </div>
