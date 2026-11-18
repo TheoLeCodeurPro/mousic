@@ -6,13 +6,12 @@
 
 ## 🎯 Le Concept : « What your music looks like »
 
-Plutôt qu'une simple grille de pochettes, ce projet matérialise vos écoutes récentes sous la forme d'une **chaîne Hi-Fi skeuomorphique 4 étages** accompagnée de son **rack d'archives de cassettes** :
+Plutôt qu'une simple grille de pochettes, ce projet matérialise vos écoutes récentes sous la forme d'un **studio Hi-Fi skeuomorphique 2x2 plein écran** :
 
-1. **Analyseur de spectre numérique (Haut)** : 16 colonnes de barres LED incandescentes ambre/orange et mémoires de crêtes (*Peak Hold*) qui oscillent au rythme de la musique.
-2. **Platine Cassette TC-90** : Une cassette audio mécanique dont les bobines tournent en direct si un morceau est en cours d'écoute (`now playing`). L'étiquette de la cassette affiche le titre, l'artiste et la miniature de la pochette. Boutons mécaniques tactiles (Play, Pause, Avance, Retour, Stop).
-3. **Tuner Radio AM/FM ST-700** : L'échelle de fréquences radio rétro-éclairée sert de **frise temporelle** : l'aiguille rouge glisse pour indiquer le moment où chaque morceau a été joué.
-4. **Amplificateur intégré SA-850 (Bas)** : Double VU-mètre analogique à aiguilles oscillantes, réglages de tonalité, gros potentiomètre de volume et interrupteur général d'alimentation (qui éteint ou allume l'ensemble de la chaîne).
-5. **Meuble d'archives de cassettes (À droite / En bas sur mobile)** : Présentation de l'ensemble de vos 25 dernières cassettes avec indicateur `LIVE` pour le morceau en cours de lecture. Cliquer sur n'importe quelle cassette la charge instantanément dans la platine TC-90 !
+1. **Analyseur de spectre numérique SE-800 (Haut Gauche)** : 16 colonnes de barres LED incandescentes ambre/orange et mémoires de crêtes (*Peak Hold*) qui oscillent au rythme de la musique.
+2. **Tuner Radio AM/FM ST-700 (Haut Droite)** : L'échelle de fréquences radio rétro-éclairée sert de **frise temporelle** : l'aiguille rouge glisse pour indiquer le moment où chaque morceau a été joué.
+3. **Platine Cassette TC-90 (Bas Gauche)** : Une cassette audio mécanique dont les bobines tournent en direct si un morceau est en cours d'écoute (`now playing`). L'étiquette de la cassette affiche le titre, l'artiste et la miniature de la pochette. Boutons de transport mécaniques interactifs (Play, Pause, Avance, Retour).
+4. **Meuble d'archives de cassettes CR-25 (Bas Droite)** : Inspiré des collections de cassettes audio vintage (tranches de cassettes empilées avec marques TDK, Maxell, Sony, etc., et écriture type mixtape des artistes et morceaux). Cliquer sur n'importe quelle cassette la charge instantanément dans la platine TC-90 !
 
 ---
 
